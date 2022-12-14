@@ -30,11 +30,14 @@
 let nizLinkovaDrustvenihMreza = ["fab fa-facebook-f", "fab fa-instagram", "fab fa-youtube", "fab fa-twitter"];
 let linkoviDrustvenihMreza = ["www.facebook.com", "www.instagram.com", "www.youtube.com", "www.twitter.com"];
 let divIkonica = document.getElementsByClassName("ikonica");
-let ispisIkonica = "";
-for(let i = 0; i < linkoviDrustvenihMreza.length; i++){
- ispisIkonica += `<a class="text-body px-2 href="${linkoviDrustvenihMreza[i]}"><i class="${nizLinkovaDrustvenihMreza[i]}"</i></a>`;
+let ispisIkonica = `<div class="d-inline-flex align-items-center">`;
+for(var i = 0; i < nizLinkovaDrustvenihMreza.length; i++){
+ ispisIkonica += `<a class="text-body px-2 href="${linkoviDrustvenihMreza[i]}">
+                <i class="${nizLinkovaDrustvenihMreza[i]}"></i></a>`;
+                console.log(i);
 }
-divIkonica = ispisIkonica;
+ispisIkonica += `</div>`;
+divIkonica.innerHTML = ispisIkonica;
 
 //navigacioni meni
 let nizLinkText = ["Početna", "O nama", "Usluge", "Kontakt", "Autor"];
@@ -54,13 +57,19 @@ var aboutText = ["Qualified", "Emergency", "Accurate", "Free"];
 var aboutText2 = ["Doctors", "Services", "Testing", "Ambulance"];
 
 var aboutRow = document.getElementById("abRow");
-for (index in aboutIcon) {
-    aboutRow.innerHTML += `
+let ispisOnama = "";
+for (let i = 0; i < aboutIcon.length; i++) {
+    ispisOnama += `<div class="col-sm-3 col-6">
     <div class="bg-light text-center rounded-circle py-4">
-        <i class="${aboutIcon[index]} text-primary mb-3"></i>
-        <h6 class="mb-0">${aboutText[index]}<small class="d-block text-primary">${aboutText2[index]}</small></h6>
-    </div>`;
+        <i class="${aboutIcon[i]} text-primary mb-3"></i>
+        <h6 class="mb-0">${aboutText[i]}<small class="d-block text-primary">${aboutText2[i]}</small></h6>
+    </div></div>`;
 }
+
+aboutRow.innerHTML = ispisOnama;
+
+//services
+
 
 // slider
 slideShow();
