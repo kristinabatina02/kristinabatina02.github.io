@@ -100,11 +100,7 @@
     background: url(../img/hero.jpg) top right no-repeat;
     background-size: cover;
 }
-#abRow{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} 
+
 .service-item {
     position: relative;
     height: 350px;
@@ -248,14 +244,7 @@
     width: 150px;
     height: 150px;
 } 
-.sakrij{
-    display:none;
-  }
-  
-  .greska{
-    color: red;
-    
-  }
+
   
   #slider{
     width: 450px;
@@ -269,4 +258,24 @@
   #slider .aktivna{
     display:block;
   }
- 
+
+.greska{
+    color: #ff0000;
+}
+.prikaziGresku{
+    display: block;
+}
+.sakrijGresku{
+    display: none;
+}
+.uspesno{
+    color: #354F8E;
+    padding-top: 10px;
+}
+.sakrijUspesno{
+    display: none;
+}
+
+.service-icon{
+    font-size: 20px;
+}
