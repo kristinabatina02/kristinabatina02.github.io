@@ -106,7 +106,6 @@ if(document.location.pathname == "/index.html" || document.location.pathname == 
     var greskaLista = document.getElementById("gr");
 
     j = 1;
-    console.log(lekarVrednost);
     if(lekarVrednost == "0"){
         greskaLista.classList.remove("sakrijGresku");
         greskaLista.classList.add("prikaziGresku");
@@ -130,7 +129,7 @@ if(document.location.pathname == "/index.html" || document.location.pathname == 
 
 
 }
-if(document.location.pathname == "/index.html" || document.location.pathname == "/about.html"){
+if(document.location.pathname == "/" || document.location.pathname == "/about.html"){
     // slider
     slideShow();
 
