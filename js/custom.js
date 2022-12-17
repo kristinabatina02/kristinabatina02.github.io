@@ -1,15 +1,14 @@
 
 //ikonice u top headeru
 let nizLinkovaDrustvenihMreza = ["fab fa-facebook-f", "fab fa-instagram", "fab fa-youtube", "fab fa-twitter"];
-let linkoviDrustvenihMreza = ["www.facebook.com", "www.instagram.com", "www.youtube.com", "www.twitter.com"];
+let linkoviDrustvenihMreza = ["https://sr-rs.facebook.com/", "https://www.instagram.com/", "https://www.youtube.com/", "https://www.twitter.com/"];
 let divIkonica = document.querySelector(".ikonica");
-let ispisIkonica = `<div class="d-inline-flex align-items-center">`;
+let ispisIkonica = "";
 for(var i = 0; i < nizLinkovaDrustvenihMreza.length; i++){
  ispisIkonica += `<a class="text-body px-2 href="${linkoviDrustvenihMreza[i]}">
                 <i class="${nizLinkovaDrustvenihMreza[i]}"></i></a>`;
-                console.log(i);
+                
 }
-ispisIkonica += `</div>`;
 divIkonica.innerHTML = ispisIkonica;
 
 //navigacioni meni
@@ -24,110 +23,110 @@ for(let i = 0; i < nizLinkHref.length; i++){
 }
 divNavMenu.innerHTML = formatZaIspisNavMenu;
 
-if(document.location.pathname == "/" || document.location.pathname == "/index.html"){
+if(document.location.pathname == "/index.html" || document.location.pathname == "/"){
 
-//forma
+    //forma
 
-//regularni izrazi
-var reImePrezime = /^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
-var reJMBG = /^[\d]{13}$/;
-var reTelefon = /^(\+381|[0])6[0-79][\d]{6,7}$/;
+    //regularni izrazi
+    var reImePrezime = /^[A-ZŠĐŽČĆ][a-zšđčćž]{2,14}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,14})+$/;
+    var reJMBG = /^[\d]{13}$/;
+    var reTelefon = /^(\+381|[0])6[0-79][\d]{6,7}$/;
 
-var objImePrezime = document.getElementById("imePrezime");
-objImePrezime.addEventListener("blur",function(){
-proveraRegularnihIzraza(reImePrezime, objImePrezime);
-});
-var objJMBG = document.getElementById("jmbg");
-objJMBG.addEventListener("blur", function(){
-proveraRegularnihIzraza(reJMBG, objJMBG);
-});
-var objTelefon = document.getElementById("telefon");
-objTelefon.addEventListener("blur", function(){
-proveraRegularnihIzraza(reTelefon, objTelefon);
-});
-
-
-
-var nizOsoba = document.getElementsByName("osoba");
+    var objImePrezime = document.getElementById("imePrezime");
+    objImePrezime.addEventListener("blur",function(){
+    proveraRegularnihIzraza(reImePrezime, objImePrezime);
+    });
+    var objJMBG = document.getElementById("jmbg");
+    objJMBG.addEventListener("blur", function(){
+    proveraRegularnihIzraza(reJMBG, objJMBG);
+    });
+    var objTelefon = document.getElementById("telefon");
+    objTelefon.addEventListener("blur", function(){
+    proveraRegularnihIzraza(reTelefon, objTelefon);
+    });
 
 
-var cekiranoPolje = document.getElementById("uslov");
-cekiranoPolje.addEventListener("change",function(){
-if(cekiranoPolje.checked){
-    cekiranoPolje.nextElementSibling.classList.remove("prikaziGresku");
-    cekiranoPolje.nextElementSibling.classList.add("sakrijGresku");
-}
-else{
-    cekiranoPolje.nextElementSibling.classList.remove("sakrijGresku");
-    cekiranoPolje.nextElementSibling.classList.add("prikaziGresku");
-}
-})
+
+    var nizOsoba = document.getElementsByName("osoba");
 
 
-var taster = document.getElementById("dugme");
-taster.addEventListener("click", obradaForme);
-
-function obradaForme(){
-//Radio check
-var greske = 0;
-var j = 1;
-for(let i= 0; i <nizOsoba.length; i++){
-    if(nizOsoba[i].checked){
-        nizOsoba[1].nextElementSibling.classList.remove("prikaziGresku");
-        nizOsoba[1].nextElementSibling.classList.add("sakrijGresku");
-        j=0
-        break;
+    var cekiranoPolje = document.getElementById("uslov");
+    cekiranoPolje.addEventListener("change",function(){
+    if(cekiranoPolje.checked){
+        cekiranoPolje.nextElementSibling.classList.remove("prikaziGresku");
+        cekiranoPolje.nextElementSibling.classList.add("sakrijGresku");
     }
     else{
-        nizOsoba[1].nextElementSibling.classList.remove("sakrijGresku");
-        nizOsoba[1].nextElementSibling.classList.add("prikaziGresku");
-        j = 1
+        cekiranoPolje.nextElementSibling.classList.remove("sakrijGresku");
+        cekiranoPolje.nextElementSibling.classList.add("prikaziGresku");
     }
-}
-greske += j;
-j=1
-//Check check
-if(cekiranoPolje.checked){
-    cekiranoPolje.nextElementSibling.nextElementSibling.classList.remove("prikaziGresku");
-    cekiranoPolje.nextElementSibling.nextElementSibling.classList.add("sakrijGresku");
-    j=0;
-}
-else{
-    cekiranoPolje.nextElementSibling.nextElementSibling.classList.remove("sakrijGresku");
-    cekiranoPolje.nextElementSibling.nextElementSibling.classList.add("prikaziGresku");
-    j=1;
-}
-greske += j;
-greske += proveraRegularnihIzraza(reImePrezime, objImePrezime);
-greske +=  proveraRegularnihIzraza(reJMBG, objJMBG);
-greske +=  proveraRegularnihIzraza(reTelefon, objTelefon);
+    })
 
-var objLekari = document.getElementById("ddlLekari");
-var lekarVrednost = objLekari.options[objLekari.selectedIndex].value;
-var greskaLista = document.getElementById("gr");
 
-j = 1;
-console.log(lekarVrednost);
-if(lekarVrednost == "0"){
-    greskaLista.classList.remove("sakrijGresku");
-    greskaLista.classList.add("prikaziGresku");
+    var taster = document.getElementById("dugme");
+    taster.addEventListener("click", obradaForme);
+
+    function obradaForme(){
+    //Radio check
+    var greske = 0;
+    var j = 1;
+    for(let i= 0; i <nizOsoba.length; i++){
+        if(nizOsoba[i].checked){
+            nizOsoba[1].nextElementSibling.classList.remove("prikaziGresku");
+            nizOsoba[1].nextElementSibling.classList.add("sakrijGresku");
+            j=0
+            break;
+        }
+        else{
+            nizOsoba[1].nextElementSibling.classList.remove("sakrijGresku");
+            nizOsoba[1].nextElementSibling.classList.add("prikaziGresku");
+            j = 1
+        }
+    }
+    greske += j;
+    j=1
+    //Check check
+    if(cekiranoPolje.checked){
+        cekiranoPolje.nextElementSibling.nextElementSibling.classList.remove("prikaziGresku");
+        cekiranoPolje.nextElementSibling.nextElementSibling.classList.add("sakrijGresku");
+        j=0;
+    }
+    else{
+        cekiranoPolje.nextElementSibling.nextElementSibling.classList.remove("sakrijGresku");
+        cekiranoPolje.nextElementSibling.nextElementSibling.classList.add("prikaziGresku");
+        j=1;
+    }
+    greske += j;
+    greske += proveraRegularnihIzraza(reImePrezime, objImePrezime);
+    greske +=  proveraRegularnihIzraza(reJMBG, objJMBG);
+    greske +=  proveraRegularnihIzraza(reTelefon, objTelefon);
+
+    var objLekari = document.getElementById("ddlLekari");
+    var lekarVrednost = objLekari.options[objLekari.selectedIndex].value;
+    var greskaLista = document.getElementById("gr");
+
     j = 1;
-}
-else{
-    greskaLista.classList.remove("prikaziGresku");
-    greskaLista.classList.add("sakrijGresku");
-    j = 0;
-}
-greske += j;
-if(!greske){
-    taster.nextElementSibling.classList.remove("sakrijUspesno");
-    taster.nextElementSibling.classList.add("uspesno");
-}
-else{
-    taster.nextElementSibling.classList.remove("uspesno");
-    taster.nextElementSibling.classList.add("sakrijUspesno");
-}
-}
+    console.log(lekarVrednost);
+    if(lekarVrednost == "0"){
+        greskaLista.classList.remove("sakrijGresku");
+        greskaLista.classList.add("prikaziGresku");
+        j = 1;
+    }
+    else{
+        greskaLista.classList.remove("prikaziGresku");
+        greskaLista.classList.add("sakrijGresku");
+        j = 0;
+    }
+    greske += j;
+    if(!greske){
+        taster.nextElementSibling.classList.remove("sakrijUspesno");
+        taster.nextElementSibling.classList.add("uspesno");
+    }
+    else{
+        taster.nextElementSibling.classList.remove("uspesno");
+        taster.nextElementSibling.classList.add("sakrijUspesno");
+    }
+    }
 
 
 }
@@ -188,7 +187,7 @@ if(document.location.pathname == "/index.html" || document.location.pathname == 
     $(".table tbody tr:nth-child(odd)").css({"backgroundColor": "#1D2A4D", "color": "fff"});
 }
 
-if (document.location.pathname == "/contact.html"){
+if (document.location.pathname == "/contact.html" || document.location.pathname == "/"){
     let ikonicaKontakt = ["fa fa-2x fa-location-arrow", "fa fa-2x fa-phone", "fa fa-2x fa-envelope-open"];
     let tekstKontakt = ["Zdravka Čelara 16", "+381 4785 7812", "medinova@gmail.com"]
 
@@ -206,9 +205,7 @@ if (document.location.pathname == "/contact.html"){
     }
     kontakt.innerHTML = ispisKontakt;
 
-}
-
-//forma 2
+    //forma 2
 var reEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 var reIme = /^[A-ZŠĐŽČĆ][a-zšđčćž]{2,11}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,11})*$/;
 var reNaslov = /(.{3})+/
@@ -249,6 +246,10 @@ function kontaktObrada(){
         dugme.nextElementSibling.classList.add("sakrijUspesno");
     }
 }
+
+}
+
+
 function proveraRegularnihIzraza(re, obj){
     if(re.test(obj.value)){
         obj.nextElementSibling.classList.remove("prikaziGresku");
@@ -261,4 +262,4 @@ function proveraRegularnihIzraza(re, obj){
         return 1;
     }
     
-    }
+}

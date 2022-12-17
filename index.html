@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8"/>
-    <title>MEDINOVA - Hospital Website Template</title>
+    <title>MEDINOVA</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta content="Free HTML Templates" name="keywords"/>
-    <meta content="Free HTML Templates" name="description"/>
+    <meta name="keywords" content = "bolnica, usluge, cene"/>
+    <meta http-equiv="content-type" content="text/html; charset= utf-8"/>
+    <meta name="autor" content="kristina.batinic.116.21@ict.edu.rs"/>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon"/>
@@ -14,9 +15,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>  
-
-    <!-- Icon Font Stylesheet -->
     <script src="https://kit.fontawesome.com/0154d27080.js" crossorigin="anonymous"></script>
+    
+    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"/>
 
@@ -28,7 +29,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -38,9 +39,9 @@
             <div class="row">
                 <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-decoration-none text-body pe-3" href=""><i class="bi bi-telephone me-2"></i>+381 4785 7812</a>
+                        <a class="text-decoration-none text-body pe-3" href="#"><i class="bi bi-telephone me-2"></i>+381 4785 7812</a>
                         <span class="text-body">|</span>
-                        <a class="text-decoration-none text-body px-3" href=""><i class="bi bi-envelope me-2"></i>medinova@gmail.com</a>
+                        <a class="text-decoration-none text-body px-3" href="#"><i class="bi bi-envelope me-2"></i>medinova@gmail.com</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-end ikonica">
@@ -93,9 +94,9 @@
             <div class="row gx-5">
 
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;" id="slider">
-                    <img class="aktivna" src="img/img-01.jpg" alt="Slika slajdera 01" />
-                    <img src="img/img-02.jpg" alt="Slika slajdera 02" />
-                    <img src="img/img-03.jpg" alt="Slika slajdera 03" />
+                    <img class="aktivna" src="img/img-01.jpg" alt="spric" />
+                    <img src="img/img-02.jpg" alt="doktor" />
+                    <img src="img/img-03.jpg" alt="bolnica" />
                 </div>
                 <div class="col-lg-7">
                     <div class="mb-4">
@@ -121,7 +122,6 @@
             </div>
             <div class="row g-5 usluge">
                 
-                
             </div>
         </div>
     </div>
@@ -138,7 +138,7 @@
                         <h1 class="display-4">Zakažite pregled za celu porodicu</h1>
                     </div>
                     <p class="text-white mb-5">Zakažite pregled što pre bez čekanja. Vrlo rado ćemo vas ugostiti i primiti. Čekaju vas najbolji lekari. </p>
-                    <a class="btn btn-dark rounded-pill py-3 px-5 me-3" href="">Pronađi lekare</a>
+                    <a class="btn btn-dark rounded-pill py-3 px-5 me-3" href="about.html">Pronađi lekare</a>
                     
                 </div>
                 <div class="col-lg-6">
@@ -146,7 +146,6 @@
                         <h1 class="mb-4">Rezervišite pregled</h1>
                         <form>
                             <div class="row g-3">
-                                
                                 <div class="col-12 col-sm-6">
                                     <input type="text" id = imePrezime class="form-control bg-light border-0" placeholder="Unesite ime i prezime" style="height: 55px;">
                                     <p class="greska sakrijGresku">Pogrešno ste upisali. Primer: Pera Perić</p>
@@ -160,7 +159,6 @@
                                     <p class="greska sakrijGresku">Pogrešno ste napisali telefon. Maksimalno je 10 cifara. Počnite sa +381 ili 06 i </p>
                                 </div>
                                       
-                                
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select bg-light border-0" id="ddlLekari" style="height: 55px;">
                                         <option value = "0" selected>Izaberite lekara</option>
@@ -174,7 +172,7 @@
                                 </div>
                             
                                 <div class="col-12">
-                                    <input type="radio" name="osoba" id="odrasla"/>Odrasla osoba
+                                    <input type="radio" name="osoba" id="odrasla"/> Odrasla osoba
                                     <input type="radio" name="osoba" id="dete"/> Dete
                                     <p class="greska sakrijGresku">Morate izabrati</p>
                                 </div>
@@ -182,7 +180,7 @@
                                 
                                 <span class="d-none mb-span-danger-large text-danger"></span>
                                 <div class="col-12 col-sm-12">
-                                    <input type="checkbox" name="cb" id="uslov"/>Potvrđujem da sam uneo/la ispravne podatke<br/>
+                                    <input type="checkbox" name="cb" id="uslov"/> Potvrđujem da sam uneo/la ispravne podatke<br/>
                                     <p class="greska sakrijGresku">Morate potvrditi</p>
                                 </div>
                                 <div class="col-12">
@@ -279,7 +277,7 @@
 
 
     <!-- Team Start -->
-    <div class="container-fluid py-5">
+    <!-- <div class="container-fluid py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
                 <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Naši lekari</h5>
@@ -345,7 +343,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Team End -->
 
 
@@ -357,8 +355,7 @@
                     <p class="mb-md-0">&copy; <a class="text-primary" href="#">Medinova</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!-- <p class="mb-0"><a href="#">Dokumentacija</a></p> -->
-                    <a href="#"><i class="bi bi-file-earmark"></a></i>
+                    <a href="dokumentacija.pdf"><i class="bi bi-file-earmark"></a></i>
                     <a href="sitemap.xml" target="_blank"><i class="bi bi-diagram-2"></a></i>
                     <a href="rss.xml" target="_blank"><i class="bi bi-rss"></a></i>
                 </div>
@@ -373,7 +370,6 @@
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 	<channel>
-		<title>The Bristol hotel - novosti</title>
-		<link>https://kristinabatina02.github.io/kristina-thebristolhotel/stranice/index.html</link>
-		<description>Obaveštenje o novim ponudama</description>
+		<title>Medinova bolnica - vesti</title>
+		<link>https://kristinabatina02.github.io/index.html</link>
+		<description>Važne informacije o nama</description>
 	<item>
-		<title>The Bristol hotel - novosti</title>
-		<link>https://kristinabatina02.github.io/kristina-thebristolhotel/stranice/sobe.html</link>
-		<description>Nove slike naseg hotela i ponuda</description>
+		<title>Popust na usluge</title>
+		<link>https://kristinabatina02.github.io/usluge.html</link>
+		<description>Povodom praznika, sve usluge će biti snižene 20%</description>
 	</item>
 	</channel>
 </rss>
