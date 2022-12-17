@@ -130,7 +130,7 @@ if(document.location.pathname == "/" || document.location.pathname == "/index.ht
 
 
 }
-if(document.location.pathname == "/index.html" || document.location.pathname == "/about.html"){
+if(document.location.pathname == "/" || document.location.pathname == "/about.html"){
     // slider
     slideShow();
 
@@ -161,7 +161,7 @@ if(document.location.pathname == "/index.html" || document.location.pathname == 
     }
     aboutRow.innerHTML = ispisOnama;
 }
-if(document.location.pathname == "/index.html" || document.location.pathname == "/usluge.html"){
+if(document.location.pathname == "/" || document.location.pathname == "/usluge.html"){
     //usluge
     let ikoniceUsluge = ["fa-solid fa-flask-vial", "fa-solid fa-face-grin", "fa-solid fa-x-ray", "fa-solid fa-stethoscope", "fa-solid fa-baby", "fa-solid fa-eye"];
     let naslovUsluge = ["Laboratorija", "Dermatologija", "Radiologija", "Hirurgija", "Pedijatrija", "Oftalmologija"];
