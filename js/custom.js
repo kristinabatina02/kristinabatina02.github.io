@@ -23,7 +23,7 @@ for(let i = 0; i < nizLinkHref.length; i++){
 }
 divNavMenu.innerHTML = formatZaIspisNavMenu;
 
-if(document.location.pathname == "/index.html" || document.location.pathname == "/"){
+if(document.location.pathname == "/" || document.location.pathname == "/index.html"){
 
     //forma
 
