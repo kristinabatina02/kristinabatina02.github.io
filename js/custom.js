@@ -85,7 +85,7 @@ if(document.location.pathname == "/index.html" || document.location.pathname == 
     }
     greske += j;
     j=1
-    //Check check
+    //Check 
     if(cekiranoPolje.checked){
         cekiranoPolje.nextElementSibling.nextElementSibling.classList.remove("prikaziGresku");
         cekiranoPolje.nextElementSibling.nextElementSibling.classList.add("sakrijGresku");
@@ -127,6 +127,16 @@ if(document.location.pathname == "/index.html" || document.location.pathname == 
     }
     }
 
+    $("#accordionExample").click(function(){
+        var isVisible = $(this).find("collapseOne").is(":visible");
+    
+        if(isVisible){
+            $(this).find("accordion-body").hide();
+        }else{
+            $(this).find("collapseOne").show();
+        }
+    
+    })
 
 }
 if(document.location.pathname == "/" || document.location.pathname == "/index.html"|| document.location.pathname == "/about.html"){
@@ -165,9 +175,10 @@ if(document.location.pathname == "/" || document.location.pathname == "/index.ht
     let ikoniceUsluge = ["fa-solid fa-flask-vial", "fa-solid fa-face-grin", "fa-solid fa-x-ray", "fa-solid fa-stethoscope", "fa-solid fa-baby", "fa-solid fa-eye"];
     let naslovUsluge = ["Laboratorija", "Dermatologija", "Radiologija", "Hirurgija", "Pedijatrija", "Oftalmologija"];
     let tekstUsluge = ["Opremljena laboratorija sa svim mogućim analizama", "Sve kožne probleme možete izlečiti kod nas", "Naša bolnica raspolaže modernim aparatima koji prilikom snimanja koriste veoma niske doze zračenja","Uz hiruško odeljenje pacijentima na raspolaganju su i usluge poluintenzivne i intenzivne nege","U službi pedijatrije Medinova se leče deca od rođenja do uzrasta od 18 godina", "Kod nas možete obaviti sve vrste očnog pregleda"];
-
+    
     let usluge = document.querySelector(".usluge");
     let ispisUsluga = "";
+
     for(let i = 0; i < naslovUsluge.length; i++){
         ispisUsluga += `<div class="col-lg-4 col-md-6">
         <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
@@ -175,10 +186,12 @@ if(document.location.pathname == "/" || document.location.pathname == "/index.ht
         <i class="${ikoniceUsluge[i]} text-white"></i>
         </div>
         <h4 class="mb-3">${naslovUsluge[i]}</h4>
-        <p class="m-0">${tekstUsluge[i]}</p>
+        <p class="m-0 mb-2">${tekstUsluge[i]}</p>
         </div></div>`;
+
     }
     usluge.innerHTML = ispisUsluga;
+
 
     //zebra
     var parniTabela01 = $(".table tbody tr:nth-child(even)");
@@ -262,3 +275,4 @@ function proveraRegularnihIzraza(re, obj){
     }
     
 }
+
