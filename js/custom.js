@@ -127,16 +127,6 @@ if(document.location.pathname == "/index.html" || document.location.pathname == 
     }
     }
 
-    $("#accordionExample").click(function(){
-        var isVisible = $(this).find("collapseOne").is(":visible");
-    
-        if(isVisible){
-            $(this).find("accordion-body").hide();
-        }else{
-            $(this).find("collapseOne").show();
-        }
-    
-    })
 
 }
 if(document.location.pathname == "/" || document.location.pathname == "/index.html"|| document.location.pathname == "/about.html"){
